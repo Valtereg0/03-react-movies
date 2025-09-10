@@ -25,14 +25,10 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
         document.body.style.overflow = 'hidden';
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'auto';
         };
 
-    return () => {
-        document.removeEventListener('keydown', handleKeyDown);
-        document.body.style.overflow = 'auto';
-        
-    };
+
     }, [onClose]);
 
 
@@ -43,13 +39,13 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
                     &times;
                 </button>
                 <img
-                    src="https://image.tmdb.org/t/p/original/w500${movie.backdrop_path}"
-                    alt="movie_title"
+                    src={`https://image.tmdb.org/t/p/original/w500${movie.backdrop_path}`}
+                    alt={movie.title}
                     className={css.image}
                 />
                 <div className={css.content}>
-                    <h2>movie_title</h2>
-                    <p>movie_overview</p>
+                    <h2>{movie.title}</h2>
+                    <p>{movie.overview}</p>
                     <p>
                         <strong>Release Date:</strong> {movie.release_date}
                     </p>
