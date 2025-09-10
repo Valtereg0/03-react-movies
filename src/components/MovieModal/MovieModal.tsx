@@ -1,4 +1,4 @@
-import css from './movieModal.module.css';
+import css from './MovieModal.module.css';
 import type { Movie } from '../../types/movie';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
